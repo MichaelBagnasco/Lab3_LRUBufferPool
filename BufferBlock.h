@@ -14,7 +14,21 @@
 
 class BufferBlock: public BufferblockADT{
 public:
+    BufferBlock();
+    ~BufferBlock();
+    void getData(int pos, int sz, char* data);
+    void setID(int id);
+    int getID() const;
+    int getBlocksize() const;
+    char* getBlock() const;
+    void setBlock(char* blk);
+    
 private:
+    int blockID;
+    static int blockIDCount;
+    char* block;
+    int blockSize;
+    int blockPos;
 };
 
 #endif /* BufferBlock_h */
