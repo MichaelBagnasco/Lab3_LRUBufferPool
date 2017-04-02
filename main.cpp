@@ -6,13 +6,13 @@
  */
 
 #include "constants.h"
-#include "LRUBufferPool.h"
+#include "BufferPool.h"
 
 using namespace std;
 
 int main() {
     //initialize buffer pool
-    LRUBufferPool* bp = new LRUBufferPool("mydatafile.txt", POOL_SIZE, BLOCKSIZE);
+    BufferPool* bp = new BufferPool("mydatafile.txt", POOL_SIZE, BLOCKSIZE);
     
     //get data from the buffer
     char* data = new char[10];

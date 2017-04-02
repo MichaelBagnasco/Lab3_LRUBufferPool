@@ -7,16 +7,16 @@
 //
 #include "BufferPoolADT.h"
 
-#ifndef LRUBufferPool_h
-#define LRUBufferPool_h
+#ifndef BufferPool_h
+#define BufferPool_h
 
-class LRUBufferPool: public BufferPoolADT{
+class BufferPool: public BufferPoolADT{
 public:
-    LRUBufferPool();
-    ~LRUBufferPool();
+    BufferPool();
+    ~BufferPool();
     void getBytes(char* space, int sz, int pos);
     void printBufferBlockOrder();
-    int getLRUBlockID();
+    int getBlockID();
 private:
 };
 
