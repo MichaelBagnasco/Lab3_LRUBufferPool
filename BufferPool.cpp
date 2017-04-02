@@ -1,5 +1,5 @@
 //
-//  LRUBufferPool.cpp
+//  BufferPool.cpp
 //  Michael_Bagnasco_Lab3
 //
 //  Created by Michael Bagnasco on 4/2/17.
@@ -9,6 +9,11 @@
 #include "BufferPool.h"
 
 BufferPool::BufferPool()
+{
+    
+}
+
+BufferPool::BufferPool(string filename, int poolSize, int blockSize)
 {
     
 }
@@ -28,9 +33,9 @@ void BufferPool::printBufferBlockOrder()
     
 }
 
-int BufferPool::getBlockID()
+int BufferPool::getLRUBlockID()
 {
-    
+    return 0;
 }
 
 
