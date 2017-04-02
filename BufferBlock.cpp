@@ -18,14 +18,14 @@ BufferBlock::~BufferBlock()
     
 }
 
-void BufferBlock::getData(int pos, int sz, char *data)
+void BufferBlock::getData(int pos, int sz, char* data)
 {
     
 }
 
 void BufferBlock::setID(int id)
 {
-    
+    blockID = id;
 }
 
 int BufferBlock::getID() const
@@ -41,6 +41,11 @@ int BufferBlock::getBlocksize() const
 char* BufferBlock::getBlock() const
 {
     return block;
+}
+
+void BufferBlock::setBlock(char* blk)
+{
+    
 }
 
 
