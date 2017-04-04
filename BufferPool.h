@@ -7,6 +7,7 @@
 //
 #include "BufferPoolADT.h"
 #include "BufferBlock.h"
+#include <fstream>
 
 #ifndef BufferPool_h
 #define BufferPool_h
@@ -18,9 +19,14 @@ public:
     ~BufferPool();
     void getBytes(char* space, int sz, int pos);
     void printBufferBlockOrder();
+    void printBuffer(ofstream&);
     int getLRUBlockID();
 private:
     int size;
+    BufferBlock Pool[5];
+    BufferBlock* Registry[5];
+    BufferBlock* tempRegPtr;
+    fstream fin;
 };
 
 #include <stdio.h>
