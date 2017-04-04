@@ -11,8 +11,11 @@
 using namespace std;
 
 int main() {
+    ofstream fout;
+    fout.open("output.txt", ios::out|ios::binary);
     //initialize buffer pool
     BufferPool* bp = new BufferPool("mydatafile.txt", POOL_SIZE, BLOCKSIZE);
+    //bp->printBuffer(fout);
     
     //get data from the buffer
     char* data = new char[10];
@@ -60,6 +63,11 @@ int main() {
     printChars(data, 10, 16600/BLOCKSIZE);
     bp->printBufferBlockOrder();
 	
+    /*for (int i = 0; i < 10; i++) {
+        cout << endl;
+    }
+    bp->printBuffer();*/
+    
 	//close program
 	cout << endl << endl;
 	//system("pause");
