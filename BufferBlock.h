@@ -15,9 +15,10 @@
 class BufferBlock: public BufferblockADT{
 public:
     BufferBlock();
+    BufferBlock(char* data, int sz = 4096);
     ~BufferBlock();
     void getData(int pos, int sz, char* data);
-    void setID(int id);
+    void setID(int);
     int getID() const;
     int getBlocksize() const;
     char* getBlock() const;
@@ -26,7 +27,8 @@ public:
 private:
     int blockID;
     static int blockIDCount;
-    char* block;
+    char* blockPtr;
+    char block[4096];
     int blockSize;
     int blockPos;
 };

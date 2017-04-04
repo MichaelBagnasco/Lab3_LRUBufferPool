@@ -10,8 +10,14 @@
 
 BufferBlock::BufferBlock()
 {
-    
+    blockPtr = block;
 }
+
+BufferBlock::BufferBlock(char* data, int sz)
+{
+    blockPtr = block;
+}
+
 
 BufferBlock::~BufferBlock()
 {
@@ -20,7 +26,10 @@ BufferBlock::~BufferBlock()
 
 void BufferBlock::getData(int pos, int sz, char* data)
 {
-    
+    for (int i = 0; i < sz; i++) {
+        data[i] = block[pos];
+        pos++;
+    }
 }
 
 void BufferBlock::setID(int id)
@@ -40,11 +49,14 @@ int BufferBlock::getBlocksize() const
 
 char* BufferBlock::getBlock() const
 {
-    return block;
+    return blockPtr;
 }
 
 void BufferBlock::setBlock(char* blk)
 {
+    for (int i = 0; i < 4096; i++) {
+        *(blockPtr + i) = blk[i];
+    }
     
 }
 
