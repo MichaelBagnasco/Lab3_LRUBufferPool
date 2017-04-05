@@ -17,7 +17,7 @@ BufferPool::BufferPool(string filename, int poolSize, int blockSize)
 {
     char tempBlock[4096];
     
-    fin.open("/Users/Bagnastayy/Developer/Michael_Bagnasco_Lab3/Michael_Bagnasco_Lab3/mydatafile.txt", ios::in | ios::binary);
+    fin.open(filename, ios::in | ios::binary);
     
     if (fin.is_open()) {
         for (int i = 0; i < poolSize; i++) {
@@ -66,7 +66,12 @@ void BufferPool::getBytes(char* space, int sz, int pos)
 
 void BufferPool::printBufferBlockOrder()
 {
+    cout << "My buffer block order for the most recently used to LRU is:" << endl;
+    cout << "        " ;
+    for (int i = 0; i < 5; i++)
+        cout << Registry[i]->getID() << "  ";
     
+    cout << endl << endl;
 }
 
 int BufferPool::getLRUBlockID()
