@@ -79,15 +79,5 @@ int BufferPool::getLRUBlockID()
     return 0;
 }
 
-void BufferPool::printBuffer(ofstream& fout)
-{
-    for (int i = 0; i < 5; i++) {
-        for (int j = 0 ; j < 4096; j++) {
-            cout << *(Registry[i]->getBlock() + j);
-        }
-        cout << endl << endl << endl;
-    }
-}
-
 
 
