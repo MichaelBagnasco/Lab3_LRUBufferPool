@@ -66,6 +66,6 @@ int main() {
     
 	//close program
 	cout << endl << endl;
-	//system("pause");
+	system("pause");
 	return 0;
 }

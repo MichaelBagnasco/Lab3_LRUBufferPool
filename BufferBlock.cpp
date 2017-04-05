@@ -21,11 +21,11 @@ BufferBlock::BufferBlock(char* data, int sz)
 
 BufferBlock::~BufferBlock()
 {
-    
 }
 
 void BufferBlock::getData(int pos, int sz, char* data)
 {
+    //  Copies data from block into "data"
     for (int i = 0; i < sz; i++) {
         data[i] = block[pos];
         pos++;
@@ -54,12 +54,8 @@ char* BufferBlock::getBlock() const
 
 void BufferBlock::setBlock(char* blk)
 {
-    for (int i = 0; i < 4096; i++) {
+    //  
+    for (int i = 0; i < 4096; i++)
         *(blockPtr + i) = blk[i];
-    }
     
 }
-
-
-
-
